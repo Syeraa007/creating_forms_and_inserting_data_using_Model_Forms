@@ -10,7 +10,9 @@ def topic(request):
         TFD=TopicForm(request.POST)
         if TFD.is_valid():
             TFD.save()
-        return HttpResponse('Data taken')
+            return HttpResponse('Data is Valid')
+        else:
+            return HttpResponse('Data is Invalid')
     return render(request,'topic.html',d)
 
 def page(request):
@@ -20,7 +22,10 @@ def page(request):
         PFD=PageForm(request.POST)
         if PFD.is_valid():
             PFD.save()
-        return HttpResponse('Data taken')
+            return HttpResponse('Data is Valid')
+        else:
+            return HttpResponse('Data is Invalid')
+
     return render(request,'page.html',d)
 
 def record(request):
@@ -30,5 +35,7 @@ def record(request):
         RFD=RecordForm(request.POST)
         if RFD.is_valid():
             RFD.save()
-        return HttpResponse('Data taken')
+            return HttpResponse('Data is Valid')
+        else:
+            return HttpResponse('Data is Invalid')
     return render(request,'record.html',d)
